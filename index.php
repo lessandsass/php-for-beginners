@@ -18,9 +18,13 @@
     ?>
 
     <ul>
-        <?php foreach ($books as $book) : 
-            echo "<li>$book</li>";
-         endforeach; ?> 
+
+        <?php
+            foreach ($books as $book) {
+                echo "<li>$book</li>";
+            }
+        ?>
+
     </ul>
 
 </body>
