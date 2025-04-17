@@ -12,18 +12,13 @@
 
     <?php
         $books = ['Book 1', 'Book 2', 'Book 3'];
-
-        
-
     ?>
 
     <ul>
 
-        <?php
-            foreach ($books as $book) {
-                echo "<li>$book</li>";
-            }
-        ?>
+        <?php foreach ($books as $book) : ?>
+            <li><?= $book ?></li>
+        <?php endforeach ?>
 
     </ul>
 
