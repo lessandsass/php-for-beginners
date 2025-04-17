@@ -14,13 +14,11 @@
         $books = ['Book 1', 'Book 2', 'Book 3'];
     ?>
 
-    <ul>
-
-        <?php foreach ($books as $book) : ?>
-            <li><?= $book ?></li>
-        <?php endforeach ?>
-
-    </ul>
+    <p>
+        <?=  $books[0]; ?>
+        <?=  $books[1]; ?>
+        <?=  $books[2]; ?>
+    </p>
 
 </body>
 </html>
