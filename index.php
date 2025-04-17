@@ -11,14 +11,29 @@
     <h1>Recommended books</h1>
 
     <?php
-        $books = ['Book 1', 'Book 2', 'Book 3'];
+        $books = [
+            [
+                'name' => 'The Lord of the Rings',
+                'author' => 'J.R.R. Tolkien',
+                'purchaseUrl' => 'https://www.goodreads.com/book/show/1.The_Lord_of_the_Rings',
+            ],
+            [
+                'name' => 'The Hobbit',
+                'author' => 'J.R.R. Tolkien',
+                'purchaseUrl' => 'https://www.goodreads.com/book/show/2.The_Hobbit',
+            ]
+        ];
     ?>
 
-    <p>
-        <?=  $books[0]; ?>
-        <?=  $books[1]; ?>
-        <?=  $books[2]; ?>
-    </p>
+    <ul>
+        <?php foreach ($books as $book) : ?>
+            <li>
+                <a href="<?= $book['purchaseUrl'] ?>">
+                    <?= $book['name'] ?> by <?= $book['author'] ?>
+                </a>
+            </li>
+        <?php endforeach ?>
+    </ul>
 
 </body>
 </html>
