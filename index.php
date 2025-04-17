@@ -21,12 +21,13 @@
 
     <?php
         $name = "Dark Matter";
-        $read = true;
+        $read = false;
 
         if ($read) {
             $message = "You have read $name";
+        } else {
+            $message = "You have not read $name";
         }
-
     ?>
 
     <h1>
