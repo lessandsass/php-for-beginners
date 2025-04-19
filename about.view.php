@@ -121,9 +121,11 @@
     </nav>
 
     <section>
+        <h1>
         <div class="flex flex-col items-center justify-center h-screen">
-            <h1 class="text-4xl font-bold">Home Page</h1>
+            <h1 class="text-4xl font-bold">About Page</h1>
         </div>
+        </h1>
     </section>
 
 </body> 
