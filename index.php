@@ -44,19 +44,19 @@
             ],
         ];
 
-        function filter($items, $fn) 
-        {
-            $filteredItems = [];
+        // function filter($items, $fn) 
+        // {
+        //     $filteredItems = [];
 
-            foreach ($items as $item) {
-                if ($fn($item)) {
-                    $filteredItems[] = $item;
-                }
-            }
-            return $filteredItems;
-        }
+        //     foreach ($items as $item) {
+        //         if ($fn($item)) {
+        //             $filteredItems[] = $item;
+        //         }
+        //     }
+        //     return $filteredItems;
+        // }
 
-        $filteredBooks = filter($books, function ($book) {
+        $filteredBooks = array_filter($books, function ($book) {
             return $book['author'] === 'J.R.R. Tolkien';
         });
 
