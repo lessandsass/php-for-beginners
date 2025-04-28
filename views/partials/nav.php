@@ -33,20 +33,19 @@
                 </div>
                 <div class="hidden sm:ml-6 sm:block">
                     <div class="flex space-x-4">
-                        <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
-                        <a href="/" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white" aria-current="page">
+                        <a href="/" class="<?= $_SERVER['REQUEST_URI'] === "/" ? "bg-gray-900 text-white" : "text-gray-300"; ?> rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white" aria-current="page">
                             Home
                         </a>
                         
-                        <a href="/about.php" class="rounded-md bg-gray-900 px-3 py-2 text-sm font-medium text-white">
+                        <a href="/about.php" class="<?= $_SERVER['REQUEST_URI'] === "/about.php" ? "bg-gray-900 text-white" : "text-gray-300"; ?> rounded-md px-3 py-2 text-sm font-medium">
                             About
                         </a>
 
-                        <a href="/contact.php" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">
+                        <a href="/contact.php" class="<?= $_SERVER['REQUEST_URI'] === "/contact.php" ? "bg-gray-900 text-white" : "text-gray-300"; ?> rounded-md px-3 py-2 text-sm font-medium hover:bg-gray-700 hover:text-white">
                             Contact
                         </a>
 
-                        <a href="/contact.php" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">
+                        <a href="/contact.php" class="text-gray-300 rounded-md px-3 py-2 text-sm font-medium hover:bg-gray-700 hover:text-white">
                             Testing
                         </a>
 
