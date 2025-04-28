@@ -1,7 +1,6 @@
 <?php require ('partials/head.php'); ?>
-
-<!-- nav -->
 <?php  require "partials/nav.php"; ?>
+<?php require ('partials/banner.php');?>
 
 <section>
     <div class="flex flex-col items-center justify-center h-screen">

@@ -1,7 +1,6 @@
 <?php require "partials/head.php"; ?>
-
-<!-- nav -->
 <?php  require "partials/nav.php"; ?>
+<?php  require "partials/banner.php"; ?>
 
 <section>
     <h1>
