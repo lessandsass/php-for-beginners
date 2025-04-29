@@ -14,7 +14,6 @@ if (array_key_exists($uri, $routes)) {
     require $routes[$uri];
 } else {
     http_response_code(404);
-    echo "sorry, Not Found";
+    require 'views/404.php';
     die();
-    // require 'controllers/404.php';
 }
