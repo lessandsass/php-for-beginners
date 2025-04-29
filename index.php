@@ -2,18 +2,19 @@
 
 require 'functions.php'; 
 
-$uri = $_SERVER['REQUEST_URI'];
+$uri = parse_url($_SERVER['REQUEST_URI'])['path'];
 
-// dd(parse_url($uri));
+$routes = [
+    '/' => 'controllers/index.php',
+    '/about' => 'controllers/about.php',
+    '/contact' => 'controllers/contact.php',
+];
 
-if ($uri === '/') {
-    require 'controllers/index.php';
-} elseif ($uri === '/about') {
-    require 'controllers/about.php';
-} elseif ($uri === '/contact') {
-    require 'controllers/contact.php';
+if (array_key_exists($uri, $routes)) {
+    require $routes[$uri];
+} else {
+    http_response_code(404);
+    echo "sorry, Not Found";
+    die();
+    // require 'controllers/404.php';
 }
-//  else {
-//     http_response_code(404);
-//     // require 'controllers/404.php';
-// }
