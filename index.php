@@ -9,13 +9,13 @@ require 'functions.php';
 // $dsn = Data Source Name
 
 class Database {
-    public function query() 
+    public function query($query) 
     {
         $dsn = "mysql:host=localhost;port=3306;dbname=myapp;charset=utf8";
 
         $pdo =new PDO($dsn, 'root', '');
 
-        $statement = $pdo->prepare("SELECT * FROM posts");
+        $statement = $pdo->prepare($query);
 
         $statement->execute();
 
@@ -26,7 +26,7 @@ class Database {
 
 $db = new Database();
 
-$posts = $db->query();
+$posts = $db->query('SELECT * FROM posts');
 
 foreach ($posts as $post) {
     echo "<li>" . $post['title'] . "</li>";
