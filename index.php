@@ -8,15 +8,25 @@ require 'functions.php';
 // create a instance of PDO
 // $dsn = Data Source Name
 
-$dsn = "mysql:host=localhost;port=3306;dbname=myapp;charset=utf8";
+class Database {
+    public function query() 
+    {
+        $dsn = "mysql:host=localhost;port=3306;dbname=myapp;charset=utf8";
 
-$pdo =new PDO($dsn, 'root', '');
+        $pdo =new PDO($dsn, 'root', '');
 
-$statement = $pdo->prepare("SELECT * FROM posts");
+        $statement = $pdo->prepare("SELECT * FROM posts");
 
-$statement->execute();
+        $statement->execute();
 
-$posts = $statement->fetchAll(PDO::FETCH_ASSOC);
+        return $statement->fetchAll(PDO::FETCH_ASSOC);
+
+    }
+}
+
+$db = new Database();
+
+$posts = $db->query();
 
 foreach ($posts as $post) {
     echo "<li>" . $post['title'] . "</li>";
