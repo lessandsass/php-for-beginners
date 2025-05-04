@@ -9,28 +9,31 @@ require 'functions.php';
 // $dsn = Data Source Name
 
 class Database {
-    public function query($query) 
+
+    public $connection;
+
+    public function __construct() 
     {
         $dsn = "mysql:host=localhost;port=3306;dbname=myapp;charset=utf8";
+        $this->connection = new PDO($dsn, 'root', '');
+    }
 
-        $pdo =new PDO($dsn, 'root', '');
-
-        $statement = $pdo->prepare($query);
+    public function query($query) 
+    {
+        $statement = $this->connection->prepare($query);
 
         $statement->execute();
 
-        return $statement->fetchAll(PDO::FETCH_ASSOC);
+        return $statement;
 
     }
 }
 
 $db = new Database();
 
-$posts = $db->query('SELECT * FROM posts');
+$post = $db->query('SELECT * FROM posts where id = 1')->fetch(PDO::FETCH_ASSOC);
 
-foreach ($posts as $post) {
-    echo "<li>" . $post['title'] . "</li>";
-}
+dd($post['title']);
 
 
 
