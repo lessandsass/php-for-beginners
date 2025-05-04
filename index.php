@@ -6,23 +6,23 @@ require 'functions.php';
 // connect to the MySQL database
 // initialize the PDO
 // create a instance of PDO
+// $dsn = Data Source Name
 
-class Person 
-{
-    public $name;
-    public $age;
+$dsn = "mysql:host=localhost;port=3306;dbname=myapp;charset=utf8";
 
-    public function breath()
-    {
-        echo $this->name . ' is breathing';
-    }
-}
+$pdo =new PDO($dsn, 'root', '');
 
-$person = new Person();
-$person->name = 'John';
-$person->age = 25;
-// dd($person);
+$statement = $pdo->prepare("SELECT * FROM posts");
 
-// dd($person->name);
-// dd($person->age);
-$person->breath();
+$statement->execute();
+
+$posts = $statement->fetchAll(PDO::FETCH_ASSOC);
+
+dd($posts);
+
+
+
+
+
+
+
