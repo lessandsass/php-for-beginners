@@ -3,12 +3,7 @@
 require 'functions.php'; 
 require 'Database.php';
 
-$config = [
-    'host' => 'localhost',
-    'port' => '3306',
-    'dbname' => 'myapp',
-    'charset' => 'utf8'
-];
+$config = require 'config.php';
 
 $db = new Database($config);
 
