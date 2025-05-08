@@ -14,8 +14,6 @@ class Database {
             'charset' => 'utf8'
         ];
 
-        http_build_query($data);  
-
         $dsn = "
                     mysql:host={$config['host']};
                     port={$config['port']};
