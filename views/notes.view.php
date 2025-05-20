@@ -5,9 +5,15 @@
 
 <section>
     <h1>
-    <div class="flex flex-col items-center justify-center h-screen">
-        <h1 class="text-4xl font-bold">Notes Page</h1>
-    </div>
+        <div class="flex flex-col items-center justify-center h-screen">
+
+            <?php foreach ($notes as $note) : ?>
+                <li>
+                    <?= $note['body']; ?>
+                </li>
+            <?php endforeach; ?>
+
+        </div>
     </h1>
 </section>
 
