@@ -8,10 +8,10 @@
         <div class="flex flex-col items-center justify-center h-screen">
 
             <?php foreach ($notes as $note) : ?>
-                <li>
-                    <?= $note['body']; ?>
-                </li>
-            <?php endforeach; ?>
+                <a href="/note?id=<?= $note['id']; ?>" class="text-blue-500 hover:underline">
+                    <li><?= $note['body']; ?></li>
+                </a>
+            <?php endforeach; ?> 
 
         </div>
     </h1>
