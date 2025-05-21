@@ -11,7 +11,9 @@ if (! $note) {
     abort(404);
 }
 
-if ($note['user_id'] !== 3) {
+$currentUserId = 3;
+
+if ($note['user_id'] !== $currentUserId) {
     abort(403);
 }
 
