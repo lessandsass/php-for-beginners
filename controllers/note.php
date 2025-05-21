@@ -5,13 +5,14 @@ $db = new Database($config['database']);
 
 $heading = "The Note";
 
-$note = $db->query('SELECT * FROM notes WHERE user_id = :user_id AND id = :id', [
-    'id' => $_GET['id'],
-    'user_id' => 3
-])->fetch();
+$note = $db->query('SELECT * FROM notes WHERE id = :id', ['id' => $_GET['id']])->fetch();
 
-if (!$note) {
+if (! $note) {
     abort(404);
+}
+
+if ($note['user_id'] !== 3) {
+    abort(403);
 }
 
 require "views/note.view.php";
