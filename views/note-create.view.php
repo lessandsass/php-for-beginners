@@ -26,17 +26,12 @@
                                         placeholder="Here's as an idea for a note..."
                                     ></textarea>
 
-                                    <!-- <?php if (!empty($errors)) : ?>
+                                    <?php if (!empty($errors)) : ?>
                                         <div class="mt-2 text-sm text-red-600">
                                             <p><?= $errors[0]; ?></p>
                                         </div>
-                                    <?php endif; ?> -->
-
-                                    <?php if (isset($errors['body'])) : ?>
-                                        <div class="mt-2 text-sm text-red-600">
-                                            <p><?= $errors['body']; ?></p>
-                                        </div>
                                     <?php endif; ?>
+
 
                                 </div>
                                 
