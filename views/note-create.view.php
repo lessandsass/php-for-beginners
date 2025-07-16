@@ -26,6 +26,13 @@
                                         placeholder="Here's as an idea for a note..."
                                         required
                                     ></textarea>
+
+                                    <?php if (!empty($errors)) : ?>
+                                        <div class="mt-2 text-sm text-red-600">
+                                            <p><?= $errors[0]; ?></p>
+                                        </div>
+                                    <?php endif; ?>
+
                                 </div>
                                 
                                 <button class="text-indigo-50 bg-indigo-600 px-2 py-1 rounded mt-2 hover:bg-indigo-500">
