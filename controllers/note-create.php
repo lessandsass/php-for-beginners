@@ -13,11 +13,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
     $validator = new Validator();
 
-    if ($validator->string($_POST['body'])) {
-        $errors[] = 'Body cannot be empty';
-    }
-
-    if ($validator->string($_POST['body']) > 1000) {
+    if (! $validator->string($_POST['body'], 1, 1000)) {
         $errors[] = 'Body must be at most 1000 characters';
     }
 

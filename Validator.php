@@ -3,9 +3,9 @@
 class Validator
 {
 
-    public function string($value) 
+    public function string($value, $min = 1, $max = 255) 
     {
-        return strlen(trim($value)) === 0;
+        return strlen(trim($value)) >= $min && strlen(trim($value)) <= $max;
     }
 
 }
