@@ -1,5 +1,7 @@
 <?php
 
+require 'Validator.php';
+
 $config = require('config.php');
 $db = new Database($config['database']);
 
@@ -8,11 +10,14 @@ $heading = "Create a Note";
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
     $errors = [];
-    if (strlen($_POST['body']) < 1) {
+
+    $validator = new Validator();
+
+    if ($validator->string($_POST['body'])) {
         $errors[] = 'Body cannot be empty';
     }
 
-    if (strlen($_POST['body']) > 1000) {
+    if ($validator->string($_POST['body']) > 1000) {
         $errors[] = 'Body must be at most 1000 characters';
     }
 
