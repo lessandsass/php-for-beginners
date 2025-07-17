@@ -12,6 +12,10 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $errors[] = 'Body cannot be empty';
     }
 
+    if (strlen($_POST['body']) > 1000) {
+        $errors[] = 'Body must be at most 1000 characters';
+    }
+
     if (empty($errors)) {
         $db->query('INSERT INTO notes (body, user_id) VALUES (:body, :user_id)', [
             'body' => $_POST['body'],
