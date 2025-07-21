@@ -7,6 +7,8 @@ $note = $db->query('SELECT * FROM notes WHERE id = :id', ['id' => $_GET['id']])-
 
 authorize($note['user_id'] === 3);
 
+require "views/notes/show.view.php";
+
 view("notes/show.view.php", [
     'heading' => "The Note",
     'note' => $note
