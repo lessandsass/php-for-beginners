@@ -11,12 +11,19 @@
             <p><?= htmlspecialchars($note['body']); ?></p>
 
 
-            <a 
-                href="/notes/<?= $note['id'] ?>/edit" 
-                class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded block mb-4"
+            <form 
+                method="POST"
+                class="mt-6"
             >
-                Delete
-            </a>
+                <input type="hidden" name="id" value="<?= $note['id'] ?>">
+
+                <button 
+                    type="submit" 
+                    class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded block mb-4"
+                >
+                    Delete
+                </button>
+            </form>
 
         </div>
     </h1>
