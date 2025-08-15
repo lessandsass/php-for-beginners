@@ -53,7 +53,7 @@ class Router {
     public function route($uri, $method)
     {
         foreach ($this->routes as $route) {
-            if ($route['uri'] === $uri) {
+            if ($route['uri'] === $uri && $route['method'] === strtoupper($method)) {
                 require base_path($route['controller']);
             }
         }
@@ -70,14 +70,7 @@ class Router {
 
 }
 
-// function routeToController($uri, $routes)
-// {
-//     if (array_key_exists($uri, $routes)) {
-//         require base_path($routes[$uri]);
-//     } else {
-//         abort();
-//     }
-// }
+
 
 
 
