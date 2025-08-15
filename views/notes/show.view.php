@@ -16,7 +16,7 @@
                 class="mt-6"
             >
                 <input type="hidden" name="id" value="<?= $note['id'] ?>">
-
+                <input type="hidden" name="_method" value="DELETE">
                 <button 
                     type="submit" 
                     class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded block mb-4"
